@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("set")
 require("remap")
 require("lazy").setup("plugins")
--- vim.cmd('source ~/.config/nvim/colors/17.vim')
-vim.cmd('colorscheme pywal16')
+vim.cmd('source ~/.config/nvim/colors/256_noir.vim')
+-- vim.cmd('colorscheme pywal16')
 vim.cmd('source ~/.config/nvim/status2.vim')
 
 
@@ -23,17 +23,17 @@ vim.cmd('source ~/.config/nvim/status2.vim')
 
 -- for wayland
 -- Check if wl-copy exists and set up clipboard for Wayland
--- if vim.fn.executable('wl-copy') == 1 then
---     vim.g.clipboard = {
---         name = 'wl-clipboard',
---         copy = {
---             ['+'] = 'wl-copy',
---             ['*'] = 'wl-copy',
---         },
---         paste = {
---             ['+'] = 'wl-paste',
---             ['*'] = 'wl-paste',
---         },
---         cache_enabled = 0,
---     }
--- end
+if vim.fn.executable('wl-copy') == 1 then
+    vim.g.clipboard = {
+        name = 'wl-clipboard',
+        copy = {
+            ['+'] = 'wl-copy',
+            ['*'] = 'wl-copy',
+        },
+        paste = {
+            ['+'] = 'wl-paste',
+            ['*'] = 'wl-paste',
+        },
+        cache_enabled = 0,
+    }
+end
